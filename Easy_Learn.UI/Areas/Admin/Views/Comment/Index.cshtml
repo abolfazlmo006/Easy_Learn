@@ -1,0 +1,15 @@
+﻿@model List<CommentsVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@section css{
+    <link href="~/css/detail.css" rel="stylesheet" />
+}
+
+@foreach(var item in Model)
+{
+    <partial name="_CommentPartial" model="item"></partial>
+}

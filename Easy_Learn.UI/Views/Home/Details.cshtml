@@ -1,0 +1,470 @@
+﻿@model CourseDetailVM
+@{
+    ViewData["Title"] = "Details";
+    var i = 0;
+}
+@section css {
+    <link href="~/css/detail.css" rel="stylesheet" />
+}
+
+<div class="bg-white title-box mt-4 container" style="border-radius: 8px;">
+    <div class="d-flex" style="gap:60px;flex-wrap:wrap">
+        <div class="col-12 col-lg-7 txt-title-course">
+            <p class="title-text-course">
+                @Model.Name
+            </p>
+            <p class="txt-title-description-course bug-txt">
+                @Model.Short_Description
+            </p>
+            <div class="d-lg-flex mx-lg-5">
+                @if (Model.IsFree)
+                {
+                    <div class="col-12 col-lg-7">
+                        <a href="#" class="p-2" style="text-decoration: none;color: white;background-color: #22c55e;
+                        border-radius: 4px;
+                        border: 1px solid;
+                        border-color: #22c55e;
+                        font-size: 1.125rem;
+                        line-height: 1.75rem;
+                        font-family: 'Yekan Bakh FaNum';
+                        font-weight: 700;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20"
+                                 fill="none">
+                                <g clip-path="url(#clip0_149_208)">
+                                    <path d="M5.3276 10.2747C11.5469 13.882 12.3247 13.8821 18.544 10.2747C24.7634 6.66746 24.7634 6.66746 18.544 3.06019C12.3247 -0.547076 11.5469 -0.547086 5.3276 3.06019C2.21793 4.86383 0.663086 5.76565 0.663086 6.66747V14.7839C0.663086 15.2819 1.06684 15.6857 1.5649 15.6857C2.06296 15.6857 2.46672 15.2819 2.46672 14.7839V8.89807C2.46672 8.75515 2.62521 8.66863 2.74626 8.74462C3.43561 9.17737 4.29606 9.67644 5.3276 10.2747Z"
+                                          fill="white" />
+                                    <path d="M5.3275 11.1768C11.5468 14.784 12.3246 14.784 18.5439 11.1768L18.8987 10.9709C19.1802 10.8075 19.5352 10.9867 19.5559 11.3116C19.5872 11.8026 19.6011 12.3562 19.6011 12.9803C19.6011 17.4894 17.7975 18.3913 11.9047 18.3913C5.61774 18.3913 4.27026 17.4894 4.27026 12.9803C4.27026 12.3565 4.28363 11.8031 4.31379 11.3123C4.33379 10.9867 4.68936 10.8064 4.97149 10.9702L5.3275 11.1768Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_149_208">
+                                        <rect width="23" height="19" fill="white"
+                                              transform="translate(0.59082 0.318359)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            این دوره رایگان است
+                        </a>
+                    </div>
+                }
+                else if (User.Identity.IsAuthenticated && Model.IsStudent)
+                {
+                    <div class="col-12 col-lg-7">
+                        <a class="p-2" style="text-decoration: none;color: white;background-color: #22c55e;
+                        border-radius: 4px;
+                        border: 1px solid;
+                        border-color: #22c55e;
+                        font-size: 1.125rem;
+                        line-height: 1.75rem;
+                        font-family: 'Yekan Bakh FaNum';
+                        font-weight: 700;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20"
+                                 fill="none">
+                                <g clip-path="url(#clip0_149_208)">
+                                    <path d="M5.3276 10.2747C11.5469 13.882 12.3247 13.8821 18.544 10.2747C24.7634 6.66746 24.7634 6.66746 18.544 3.06019C12.3247 -0.547076 11.5469 -0.547086 5.3276 3.06019C2.21793 4.86383 0.663086 5.76565 0.663086 6.66747V14.7839C0.663086 15.2819 1.06684 15.6857 1.5649 15.6857C2.06296 15.6857 2.46672 15.2819 2.46672 14.7839V8.89807C2.46672 8.75515 2.62521 8.66863 2.74626 8.74462C3.43561 9.17737 4.29606 9.67644 5.3276 10.2747Z"
+                                          fill="white" />
+                                    <path d="M5.3275 11.1768C11.5468 14.784 12.3246 14.784 18.5439 11.1768L18.8987 10.9709C19.1802 10.8075 19.5352 10.9867 19.5559 11.3116C19.5872 11.8026 19.6011 12.3562 19.6011 12.9803C19.6011 17.4894 17.7975 18.3913 11.9047 18.3913C5.61774 18.3913 4.27026 17.4894 4.27026 12.9803C4.27026 12.3565 4.28363 11.8031 4.31379 11.3123C4.33379 10.9867 4.68936 10.8064 4.97149 10.9702L5.3275 11.1768Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_149_208">
+                                        <rect width="23" height="19" fill="white"
+                                              transform="translate(0.59082 0.318359)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            شما دانشجو دوره هستید
+                        </a>
+                    </div>
+
+                }
+                else if (User.Identity.IsAuthenticated)
+                {
+                    <div class="col-12 col-lg-7">
+                        <button class="p-2" style="text-decoration: none;color: white;background-color: #22c55e;
+                        border-radius: 4px;
+                        border: 1px solid;
+                        border-color: #22c55e;
+                        font-size: 1.125rem;
+                        line-height: 1.75rem;
+                        font-family: 'Yekan Bakh FaNum';
+                        font-weight: 700;" onclick="AddToCart(event,'@User.FindFirstValue(ClaimTypes.NameIdentifier)',@Model.Id)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20"
+                                 fill="none">
+                                <g clip-path="url(#clip0_149_208)">
+                                    <path d="M5.3276 10.2747C11.5469 13.882 12.3247 13.8821 18.544 10.2747C24.7634 6.66746 24.7634 6.66746 18.544 3.06019C12.3247 -0.547076 11.5469 -0.547086 5.3276 3.06019C2.21793 4.86383 0.663086 5.76565 0.663086 6.66747V14.7839C0.663086 15.2819 1.06684 15.6857 1.5649 15.6857C2.06296 15.6857 2.46672 15.2819 2.46672 14.7839V8.89807C2.46672 8.75515 2.62521 8.66863 2.74626 8.74462C3.43561 9.17737 4.29606 9.67644 5.3276 10.2747Z"
+                                          fill="white" />
+                                    <path d="M5.3275 11.1768C11.5468 14.784 12.3246 14.784 18.5439 11.1768L18.8987 10.9709C19.1802 10.8075 19.5352 10.9867 19.5559 11.3116C19.5872 11.8026 19.6011 12.3562 19.6011 12.9803C19.6011 17.4894 17.7975 18.3913 11.9047 18.3913C5.61774 18.3913 4.27026 17.4894 4.27026 12.9803C4.27026 12.3565 4.28363 11.8031 4.31379 11.3123C4.33379 10.9867 4.68936 10.8064 4.97149 10.9702L5.3275 11.1768Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_149_208">
+                                        <rect width="23" height="19" fill="white"
+                                              transform="translate(0.59082 0.318359)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            افزودن به سبد خرید
+                        </button>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-12 col-lg-7">
+                        <a href="#" class="p-2" style="text-decoration: none;color: white;background-color: #22c55e;
+                        border-radius: 4px;
+                        border: 1px solid;
+                        border-color: #22c55e;
+                        font-size: 1.125rem;
+                        line-height: 1.75rem;
+                        font-family: 'Yekan Bakh FaNum';
+                        font-weight: 700;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20"
+                                 fill="none">
+                                <g clip-path="url(#clip0_149_208)">
+                                    <path d="M5.3276 10.2747C11.5469 13.882 12.3247 13.8821 18.544 10.2747C24.7634 6.66746 24.7634 6.66746 18.544 3.06019C12.3247 -0.547076 11.5469 -0.547086 5.3276 3.06019C2.21793 4.86383 0.663086 5.76565 0.663086 6.66747V14.7839C0.663086 15.2819 1.06684 15.6857 1.5649 15.6857C2.06296 15.6857 2.46672 15.2819 2.46672 14.7839V8.89807C2.46672 8.75515 2.62521 8.66863 2.74626 8.74462C3.43561 9.17737 4.29606 9.67644 5.3276 10.2747Z"
+                                          fill="white" />
+                                    <path d="M5.3275 11.1768C11.5468 14.784 12.3246 14.784 18.5439 11.1768L18.8987 10.9709C19.1802 10.8075 19.5352 10.9867 19.5559 11.3116C19.5872 11.8026 19.6011 12.3562 19.6011 12.9803C19.6011 17.4894 17.7975 18.3913 11.9047 18.3913C5.61774 18.3913 4.27026 17.4894 4.27026 12.9803C4.27026 12.3565 4.28363 11.8031 4.31379 11.3123C4.33379 10.9867 4.68936 10.8064 4.97149 10.9702L5.3275 11.1768Z"
+                                          fill="white" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_149_208">
+                                        <rect width="23" height="19" fill="white"
+                                              transform="translate(0.59082 0.318359)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            برای یادگیری وارد سایت شوید
+                        </a>
+                    </div>
+                }
+                @if (!Model.IsFree)
+                {
+                    <div class="col-12 mt-lg-0 mt-2 col-lg-5 d-lg-flex">
+                        <p class="price">
+                            @Model.Price.ToString("n0")
+                        </p>
+                        <img class="SVG-17 m-2" src="~/Images/TOMAN.svg">
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <img class="img-course" src="~/Images/course/@Model.Image" alt="">
+        </div>
+
+    </div>
+    <hr class="mx-md-4" style="border:1px dashed" />
+    <div class="d-md-flex gap-3 gap-lg-4 px-md-5">
+        <div>
+            <a class="d-flex gap-1" href="#comments">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-black">
+                    <path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 0 0-1.032-.211 50.89 50.89 0 0 0-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 0 0 2.433 3.984L7.28 21.53A.75.75 0 0 1 6 21v-4.03a48.527 48.527 0 0 1-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979Z" />
+                    <path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z" />
+                </svg>
+
+                <p class="text-black">@Model.Comments.Count</p>
+            </a>
+        </div>
+        <div>
+            <a class="d-flex gap-1" href="#videos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-black">
+                    <path d="M4.5 4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h8.25a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3H4.5ZM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06Z" />
+                </svg>
+
+                <p class="text-black">@Model.Number_Video</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="d-flex row mt-5 ">
+        <div class="col-12 col-lg-3">
+            <div class="bg-white d-flex" style="border-radius: 8px;">
+                <div class="col-4" style="text-align: center;border-left: #eceeef 2px solid;">
+                    <div class="icon mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <g clip-path="url(#clip0_149_278)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12.3639 24.2517C2.72515 24.2517 0.659302 22.1858 0.659302 12.5471C0.659302 2.90838 2.72515 0.842529 12.3639 0.842529C22.0025 0.842529 24.0684 2.90838 24.0684 12.5471C24.0684 22.1858 22.0025 24.2517 12.3639 24.2517ZM11.3885 6.6948C11.3885 6.15609 11.8252 5.71942 12.3639 5.71942C12.9025 5.71942 13.3392 6.15609 13.3392 6.6948V11.5717H18.2161C18.7548 11.5717 19.1915 12.0084 19.1915 12.5471C19.1915 13.0858 18.7548 13.5225 18.2161 13.5225H12.3639C11.8252 13.5225 11.3885 13.0858 11.3885 12.5471V6.6948Z"
+                                      fill="#3B82F6" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_149_278">
+                                    <rect width="24" height="24" fill="white"
+                                          transform="translate(0.184692 0.318359)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p style="font-size: .75rem;
+                                line-height: 1rem;
+                                font-family: 'Yekan Bakh FaNum';
+                                color: rgb(134, 141, 153);margin-top: 0.5rem;">
+                        سطح دوره
+                    </p>
+                    <p style="font-size: 1rem;
+                    font-family: 'Yekan Bakh FaNum';
+                    font-weight: 700;">
+                        @Model.Level_Course
+                    </p>
+                </div>
+                <div class="col-4" style="text-align: center;border-left: #eceeef 2px solid;">
+                    <div class="icon mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <g clip-path="url(#clip0_149_278)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12.3639 24.2517C2.72515 24.2517 0.659302 22.1858 0.659302 12.5471C0.659302 2.90838 2.72515 0.842529 12.3639 0.842529C22.0025 0.842529 24.0684 2.90838 24.0684 12.5471C24.0684 22.1858 22.0025 24.2517 12.3639 24.2517ZM11.3885 6.6948C11.3885 6.15609 11.8252 5.71942 12.3639 5.71942C12.9025 5.71942 13.3392 6.15609 13.3392 6.6948V11.5717H18.2161C18.7548 11.5717 19.1915 12.0084 19.1915 12.5471C19.1915 13.0858 18.7548 13.5225 18.2161 13.5225H12.3639C11.8252 13.5225 11.3885 13.0858 11.3885 12.5471V6.6948Z"
+                                      fill="#3B82F6" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_149_278">
+                                    <rect width="24" height="24" fill="white"
+                                          transform="translate(0.184692 0.318359)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p style="font-size: .75rem;
+                                line-height: 1rem;
+                                font-family: 'Yekan Bakh FaNum';
+                                color: rgb(134, 141, 153);margin-top: 0.5rem;">
+                        آخرین آپدیت دوره
+                    </p>
+                    <p style="font-size: 1rem;
+                    font-family: 'Yekan Bakh FaNum';
+                    font-weight: 700;">
+                        @Model.UpdateTime.Year/@Model.UpdateTime.Month/@Model.UpdateTime.Day
+                    </p>
+                </div>
+                <div class="col-4" style="text-align: center;">
+                    <div class="icon mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <g clip-path="url(#clip0_149_278)">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12.3639 24.2517C2.72515 24.2517 0.659302 22.1858 0.659302 12.5471C0.659302 2.90838 2.72515 0.842529 12.3639 0.842529C22.0025 0.842529 24.0684 2.90838 24.0684 12.5471C24.0684 22.1858 22.0025 24.2517 12.3639 24.2517ZM11.3885 6.6948C11.3885 6.15609 11.8252 5.71942 12.3639 5.71942C12.9025 5.71942 13.3392 6.15609 13.3392 6.6948V11.5717H18.2161C18.7548 11.5717 19.1915 12.0084 19.1915 12.5471C19.1915 13.0858 18.7548 13.5225 18.2161 13.5225H12.3639C11.8252 13.5225 11.3885 13.0858 11.3885 12.5471V6.6948Z"
+                                      fill="#3B82F6" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_149_278">
+                                    <rect width="24" height="24" fill="white"
+                                          transform="translate(0.184692 0.318359)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p style="font-size: .75rem;
+                                line-height: 1rem;
+                                font-family: 'Yekan Bakh FaNum';
+                                color: rgb(134, 141, 153);margin-top: 0.5rem;">
+                        ساخت دوره
+                    </p>
+                    <p style="font-size: 1rem;
+                    font-family: 'Yekan Bakh FaNum';
+                    font-weight: 700;">
+                        @Model.CreateTime.Year/@Model.CreateTime.Month/@Model.CreateTime.Day
+                    </p>
+                </div>
+            </div>
+            <div class="mt-4 bg-white w-100 pt-3 pb-2" style="border-radius: 8px;">
+                <div style="text-align: center;">
+                    <div>
+                        <img style="border-radius: 50%!important;" width="58px" height="58px"
+                             src="~/Images/9b04K1DH2DpNew697kBVLIJ9bdeIISvWAUSb3nW6.webp" alt="">
+                    </div>
+                    <p style="font-size: 1.28rem;
+                    font-family: 'Yekan Bakh FaNum';
+                    font-weight: 700;margin: 0;">@Model.Teacher_Name</p>
+
+                    <p style="font-size: 1rem;
+                    line-height: 1rem;
+                    font-family: 'Yekan Bakh FaNum';
+                    color: rgb(134, 141, 153);">مدرس دوره</p>
+
+                </div>
+
+            </div>
+            <div class="mt-4" style="border-radius: 8px;
+            border: 1px solid rgba(210, 214, 222, 0.60);text-align: center;">
+                <img style="width: 118px; height: 100px;margin: auto;" src="~/Images/message.png" alt="">
+                <p style="font-weight: 700;font-size: 1.5rem;
+                line-height: 2rem;font-family: 'Yekan Bakh FaNum';">
+                    گفتگوی‌ برنامه نویسان
+                </p>
+                <p style="font-size: 1rem;
+                line-height: 1rem;
+                font-family: 'Yekan Bakh FaNum';
+                color: rgb(134, 141, 153);line-height: 1.5rem;">
+                    برای پرسش و پاسخ سوالات برنامه نویسی مربوط به این دوره کلیک کنید
+                </p>
+
+                <p>
+                    <a href="/Details/@Model.Id/Questions" class="vazir ">پرسش و پاسخ</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-lg-9">
+            <div class="bg-white pb-1 pt-4 px-2" style="border-radius: 8px;">
+                <div class="d-flex" style="margin-right: 2%;gap: 9px;">
+                    <div style="width: 8px; height: 8px;border-radius: 9999px;background: #3B82F6;margin-top: 22px; ">
+                    </div>
+                    <h4 style="font-weight: 700;font-size: 1.75rem;font-family: 'Yekan Bakh FaNum';color: #3B82F6;    margin-top: 13px;">
+                        توضیحات
+                    </h4>
+                </div>
+                <div style="text-align:center;" class="my-2 mx-4 mx-lg-5">
+                    <p class="bug-txt" style="font-family: 'Yekan Bakh FaNum';
+                    font-size: 1.35rem;
+                    color: rgb(134, 141, 153);
+                    font-weight: 500;">
+                        @Model.Description
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white mt-4 pb-1 pt-4 px-2" style="border-radius: 8px;">
+                <div class="d-flex" style="margin-right: 2%;gap: 9px;">
+                    <div style="width: 8px; height: 8px;border-radius: 9999px;background: #3B82F6;margin-top: 22px; ">
+                    </div>
+                    <h4 style="font-weight: 700;font-size: 1.75rem;font-family: 'Yekan Bakh FaNum';color: #3B82F6;    margin-top: 13px;">
+                        پیشنیاز ها
+                    </h4>
+                </div>
+                <div style="margin: 20px 50px;">
+                    <ul style="font-size: 1.25rem;font-weight: 600;font-family: 'Yekan Bakh FaNum';--tw-text-opacity: 1;
+                    color: rgba(75,90,120,var(--tw-text-opacity)); list-style-type:square;">
+                        @if (Model.Prerequisites.Count != 0)
+                        {
+                            @foreach (var item in Model.Prerequisites)
+                            {
+                                <li>@item</li>
+                            }
+                        }
+                        else
+                        {
+                            <p class="alert alert-info">پیشنیازی ندارد</p>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div id="videos" class="bg-white mt-4 pb-1 pt-4 px-2" style="border-radius: 8px;">
+                <div class="d-flex" style="margin-right: 2%;gap: 9px;">
+                    <div style="width: 8px; height: 8px;border-radius: 9999px;background: #3B82F6;margin-top: 22px; ">
+                    </div>
+                    <h4 style="font-weight: 700;font-size: 1.75rem;font-family: 'Yekan Bakh FaNum';color: #3B82F6;    margin-top: 13px;">
+                        جلسات دوره
+                    </h4>
+                </div>
+                <div class="my-2 mx-lg-4">
+                    <div class="video-course">
+                        @if (Model.Videos.Count == 0)
+                        {
+                            <p class="alert alert-info vazir">به زودی</p>
+                        }
+                        @foreach (var item in Model.Videos)
+                        {
+                            <div class="accordion-item mt-4 mb-3 mx-5">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse-@(++i)" aria-expanded="false" aria-controls="flush-collapse-@(i)">
+                                        <p style="font-size: 1.25rem;font-weight: 600;font-family: 'Yekan Bakh FaNum';--tw-text-opacity: 1;
+                        color: rgba(75,90,120,var(--tw-text-opacity));">
+                                            @item.Title_Video
+                                        </p>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse-@(i)" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        @if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <p class="alert alert-danger vazir">برای دیدن ویدیو باید وارد سایت شوید</p>
+                                        }
+                                        else if (!Model.IsStudent)
+                                        {
+                                            <p class="alert alert-danger vazir">شما دانشجوی دوره نیستید</p>
+                                        }
+                                        else
+                                        {
+                                            <video controls="controls" width="100%">
+                                                <source src="~/Videos/@item.Address_Video" type="video/mp4" />
+                                            </video>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <div id="comments" class="bg-white mt-4 pb-1 pt-4 px-2" style="border-radius: 8px;">
+                <div class="d-flex" style="margin-right: 2%;gap: 9px;">
+                    <div style="width: 8px; height: 8px;border-radius: 9999px;background: #3B82F6;margin-top: 22px; ">
+                    </div>
+                    <h4 style="font-weight: 700;font-size: 1.75rem;font-family: 'Yekan Bakh FaNum';color: #3B82F6;    margin-top: 13px;">
+                        دیدگاه
+                    </h4>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @if ((Model.IsFree || Model.IsStudent))
+                    {
+                        <div id="CreateForm" class="col-12 comment-box mb-3 vazir pt-0" style="box-shadow:none">
+                            <ul class="text-danger" id="errors">
+                            </ul>
+                            <h2>ارسال نظر</h2>
+                            <textarea placeholder="نظر خود را اینجا بنویسید..." asp-for="CreateCommentVM.Title"></textarea>
+                            <span class="text-danger" id="titleError"></span>
+                            <br />
+                            <label>فقط مدرس دوره می تواند این نظر را بخواند</label>
+                            <input type="checkbox" asp-for="CreateCommentVM.Private">
+                            <br />
+                            <button onclick="create(event,'@User.FindFirstValue(ClaimTypes.NameIdentifier)',@Model.Id)" class="button">ارسال</button>
+                        </div>
+
+                        <div id="EditForm" class="col-12 comment-box mb-3 vazir pt-0" style="box-shadow:none;display:none">
+                            <ul class="text-danger" id="errorsEdit">
+                            </ul>
+                            <h2>ویرایش نظر</h2>
+                            <input type="hidden" id="commentId" />
+                            <textarea placeholder="نظر خود را اینجا بنویسید..." asp-for="UpdateCommentVM.Title"></textarea>
+                            <span class="text-danger" id="titleErrorEdit"></span>
+                            <br />
+                            <button onclick="update(event,'@User.FindFirstValue(ClaimTypes.NameIdentifier)')" class="button">ثبت</button>
+                            <div style="display:inline" onclick="cancelEdit(event)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                </svg>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="alert alert-danger vazir">برای نظر دادن باید دوره را بخرید</p>
+                    }
+                }
+                else
+                {
+                    <p class="alert alert-danger vazir">برای نظر دادن باید وارد سایت شوید</p>
+                }
+
+
+
+
+                <div class="comments-course row">
+                    @foreach (var item in Model.Comments)
+                    {
+                        <partial name="_CommentPartial" model="item"></partial>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript" src="~/build/ckeditor.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
+    <script type="text/javascript" src="~/js/Details.js"></script>
+}

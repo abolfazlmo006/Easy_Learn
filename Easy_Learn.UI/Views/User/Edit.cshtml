@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@section css{
+    <style>
+        .side-item-2 {
+            border-radius: 10px;
+            background-color: rgba(111, 184, 243, 0.137);
+            color: rgb(65, 159, 236);
+        }
+
+            .side-item-2 svg {
+                color: rgb(65, 159, 236);
+            }
+    </style>
+}
+<form asp-action="Edit" method="post" class="p-5 vazir">
+    <div class="my-1 mx-3" style="text-align:left">
+        <button class="btn btn-primary" type="submit">ذخیره</button>
+    </div>
+    <div class="row m-0">
+        <div class="form-group col-12 col-md-6 mb-4">
+            <label class="control-label mb-2">نام و نام خانوادگی :</label>
+            <input class="form-control" />
+        </div>
+        <div class="form-group col-12 col-md-6 mb-4">
+            <label class="control-label mb-2">ایمیل :</label>
+            <input class="form-control" disabled />
+        </div>
+        <div class="form-group col-12 col-md-6 mb-4">
+            <label class="control-label mb-2">سن :</label>
+            <input class="form-control" />
+        </div>
+        <div class="form-group col-12 col-md-6 mb-4">
+            <label class="control-label mb-2">شماره :</label>
+            <input class="form-control" />
+        </div>
+        <div class="form-group col-12 col-md-6 mb-4">
+            <label class="control-label mb-2">نام کاربری :</label>
+            <input class="form-control" disabled />
+        </div>
+
+    </div>
+</form>

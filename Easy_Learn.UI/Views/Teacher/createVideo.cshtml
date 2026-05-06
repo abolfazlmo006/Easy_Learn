@@ -1,0 +1,46 @@
+﻿@model Easy_Learn.UI.ViewModels.VideoVM.CreateVideoVM
+
+@{
+    ViewData["Title"] = "createVideo";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="createVideo" method="post" enctype="multipart/form-data" asp-route-Id="@ViewData["ID"]">
+            @if (ViewBag.Error != null)
+            {
+                <ul class="text-danger">
+                    @foreach (var error in ViewBag.Error)
+                    {
+                        <li>@error</li>
+                    }
+                </ul>
+            }
+            else if (ViewBag.Message != null)
+            {
+                <p class="text-danger">@ViewBag.Message</p>
+            }
+            <div class="form-group">
+                <label asp-for="Video" class="control-label"></label>
+                <input asp-for="Video" class="form-control" />
+                <span asp-validation-for="Video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title_Video" class="control-label"></label>
+                <input asp-for="Title_Video" class="form-control" />
+                <span asp-validation-for="Title_Video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

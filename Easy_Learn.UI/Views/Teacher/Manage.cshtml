@@ -1,0 +1,41 @@
+﻿@model List<CourseListVM>
+@{
+    ViewData["Title"] = "Manage";
+    Layout = "~/Views/Shared/_LayoutTeacher.cshtml";
+}
+
+@section css {
+    <link href="~/css/detail.css" rel="stylesheet" />
+}
+@foreach (var item in Model)
+{
+    <div class="bg-white title-box mt-4 container" style="border-radius: 8px;">
+        <div class="d-flex row" style="gap:60px">
+            <div class="col-12 col-lg-7 txt-title-course">
+                <p class="title-text-course">
+                    @item.Name
+                </p>
+                <p class="txt-title-description-course bug-txt">
+                    @item.Short_Description
+                </p>
+                <div class="d-flex row" style="margin-right: 14%;">
+                    <a asp-action="ManageCourse" class="col-md-2 col-6" asp-route-Id="@item.Id">مدیریت</a>
+                    <a asp-action="EditCourse" class="col-md-2 col-6" asp-route-Id="@item.Id">ویرایش</a>
+                    @if (!item.IsFree)
+                    {
+                        <div class="col-12 col-lg-5 d-flex">
+                            <p class="price">
+                                @item.Price.ToString("n0")
+                            </p>
+                            <img class="SVG-17 m-2" src="~/Images/TOMAN.svg">
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <img class="img-course" src="~/Images/course/@item.Image" alt="">
+            </div>
+        </div>
+    </div>
+}

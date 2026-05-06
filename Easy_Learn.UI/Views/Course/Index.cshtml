@@ -1,0 +1,17 @@
+﻿@model List<CourseListVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <link href="~/css/course.css" rel="stylesheet" />
+}
+<div class="container-lg">
+    <h1 class="vazir mb-3">لیست محصولات</h1>
+    <div class="row mt-5">
+        @foreach (var course in Model)
+        {
+            <partial name="_CoursePartial" model="course"></partial>
+        }
+    </div>
+</div>

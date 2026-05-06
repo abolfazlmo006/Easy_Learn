@@ -1,0 +1,191 @@
+.div-left-margin {
+    display: flex;
+    align-items: flex-start;
+    position: absolute;
+    left: 45px;
+    justify-content: center;
+}
+
+.vazir {
+    font-family: "vazir" !important;
+}
+
+.nav-item {
+    margin: 7px;
+    font-size: larger;
+}
+
+.Logo {
+    margin-top: -15px;
+    width: 180px;
+    margin-left: 35px;
+}
+
+.center {
+    align-items: center;
+}
+
+.div-left {
+    position: relative;
+    width: 233px;
+    height: 50px;
+    margin-right: -47.28px;
+}
+
+.div-flex-33 {
+    display: inline-flex;
+    align-items: flex-start;
+    position: absolute;
+    top: 5px;
+    left: -8px;
+    background-color: #3b82f61a;
+    border-radius: 8px;
+}
+
+.link-33 {
+    display: inline-flex;
+    height: 40px;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 1;
+    background-color: #3b82f6;
+    border-radius: 8px;
+}
+
+.span-mr {
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 1;
+}
+
+.span-hd-fec {
+    display: flex;
+    position: relative;
+    z-index: 0;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.text-wrapper-56 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    margin-left: -0.83px;
+    font-family: "Yekan Bakh FaNum Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.link-34 {
+    display: inline-flex;
+    height: 40px;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px 8px 24px;
+    position: relative;
+    flex: 0 0 auto;
+    margin-left: -12px;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.span-hidden-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 0;
+}
+
+.text-wrapper-57 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    margin-left: -0.91px;
+    font-family: "Yekan Bakh FaNum Medium", Helvetica;
+    font-weight: 500;
+    color: #3b82f6;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-15deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+
+@media (max-width : 422px) {
+    .div-left-margin {
+        /* display: none; */
+    }
+
+}
+
+@media (max-width:767px) {
+    .div-left-margin {
+        left: 27%;
+        top:0;
+    }
+    .btn-menue{
+        margin-bottom: 23px;
+    }
+}
+
+@media (min-width:452px) {
+    .Logo{
+        width:150px !important;
+    }
+}
+@media (max-width:452px) {
+    .Logo {
+        width: 114px;
+    }
+}
+@media (max-width:375px) {
+    .text-wrapper-56{
+        display: none;
+    }
+    .text-wrapper-57{
+        display: none;
+    }
+    .name-user{
+        display:none;
+    }
+    .div-left-margin {
+        left: 30%;
+    }
+    
+}

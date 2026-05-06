@@ -1,0 +1,128 @@
+﻿@using System.Security.Claims
+@inject IClient _client
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Easy_Learn.UI</title>
+    <link rel="stylesheet" href="~/CSS/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+          integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css"
+          integrity="sha512-ZHFuHiK3EA1uh2tx7nB0j9HyXR/IAFW24KVNFGjY8QIjtDKHmcowjUyObXF40wYrG25+kECHEbH8rL+HbvRwYA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="~/EasyLearn.ico">
+    <link href="~/css/global.css" rel="stylesheet" />
+    <link href="~/css/navnew.css" rel="stylesheet" />
+    @await RenderSectionAsync("css", false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-md mt-3" aria-label="Eighth navbar example">
+        <div class="container-md" style="position: relative;">
+            <a asp-action="index" asp-controller="home"><img class="Logo" src="~/Images/easy-learn.png"></a>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <div class="div-left-margin">
+                    <div class="div-left">
+                        <div class="div-flex-33">
+                            <a asp-action="register" asp-controller="Authentication">
+                                <div class="link-33">
+                                    <img class="span-mr" src="~/Images/signout.svg">
+                                    <div class="span-hd-fec">
+                                        <div class="text-wrapper-56 vazir">عضویت</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a asp-action="login" asp-controller="Authentication">
+                                <div class="link-34">
+                                    <img class="span-mr" src="~/Images/login.svg">
+                                    <div class="span-hidden-3">
+                                        <div class="text-wrapper-57 vazir">ورود</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                
+                <div class="nav-item dropdown vazir" style="margin-left:32px;order: 1">
+                    <a class="nav-link dropdown-toggle text-black" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        @User.FindFirstValue(ClaimTypes.GivenName)
+                        <img class="rounded-circle" style="width:45px; height:45px;" src="~/Images/9b04K1DH2DpNew697kBVLIJ9bdeIISvWAUSb3nW6.webp" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu vair">
+                        <li><a class="dropdown-item" asp-controller="User" asp-action="Index">پنل کاربری</a></li>
+                        <li>
+                            <a class="dropdown-item" asp-controller="Cart" asp-action="ShowCart">
+                                سبد خرید
+                            </a>
+                        </li>
+                        <li> <form method="post" asp-controller="Authentication" asp-action="LogOut"><input type="submit" value="خروج" /></form></li>
+                    </ul>
+                </div>
+                <div class="nav-item mt-0 mx-0 not" onmouseenter="shakeBell()" style="order:1">
+                    <a asp-action="Notifications" asp-controller="User" class="text-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                            <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                        </svg>
+                    </a>
+                </div>
+            }
+            <button class="navbar-toggler btn-menue" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample07" style="margin-top: -17px;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 vazir center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-controller="course" asp-action="index">دوره ها</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">بلاگ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                           aria-expanded="false">گروه ها</a>
+                        <ul class="dropdown-menu">
+                            @foreach (var item in await _client.GetAsync())
+                            {
+                                <li><a class="dropdown-item" asp-controller="course" asp-action="category" asp-route-Id="@item.Id">@item.Title</a></li>
+                            }
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.7/dist/sweetalert2.all.min.js
+"></script>
+    <script type="text/javascript">
+        import Swal from 'sweetalert2';
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿@model List<GetQuestionCourseListVM>
+@{
+    ViewData["Title"] = "QuestionsCourse";
+}
+
+@section css {
+    <link href="~/css/questions.css" rel="stylesheet" />
+}
+
+
+<div class="container-md">
+    <a class="mb-2" asp-controller="Questions" asp-action="create" asp-route-Id="@ViewData["ID"]">
+        <button class="btn btn-success">سوال جدید</button>
+    </a>
+    @foreach (var item in Model)
+    {
+        <div class="question mt-3">
+            <div class="question-body px-5 pt-3 d-flex">
+                <div class="question-title col-12 col-md-8 m-auto">
+                    <a asp-controller="Questions" asp-action="Index" asp-route-id="@item.Id">
+                        <p class="m-2 Yekan-Bakh-FaNum text-black">@item.Title</p>
+                    </a>
+                </div>
+                <div class="answer-count col-12 col-md-4 px-4 a">
+                    <div class="mx-5">
+                        <p class="pt-3 vazir">@item.AnswerCount</p>
+                        <p class="py-2 pb-3 iransans">پاسخ</p>
+                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.Identity.Name == item.UserName || User.IsInRole("Admin"))
+                        {
+                            <div class="mt-2 bg-white">
+                                <a asp-controller="Questions" asp-action="Edit" asp-route-Id="@item.Id">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pencil-square text-success" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                    </svg>
+                                </a>
+                                <a asp-controller="Questions" asp-action="Delete" asp-route-Id="@item.Id" asp-route-courseId="@ViewData["ID"]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trash3 text-danger" viewBox="0 0 16 16">
+                                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                    </svg>
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="question-body px-5 pt-3 d-flex mt-2">
+                <div class="question-title col-12 col-md-6 m-auto">
+                    <p class="px-5 Yekan-Bakh-FaNum">تاریخ ایجاد : @item.CreatedTime</p>
+                </div>
+                <div class="col-12 col-md-6 a">
+                    <div class="">
+                        <div style="text-align: center">
+                            <div>
+                                <img style="border-radius: 50% !important" width="58px" height="58px"
+                                     src="~/Images/9b04K1DH2DpNew697kBVLIJ9bdeIISvWAUSb3nW6.webp" alt="" />
+                            </div>
+                            <p style="
+                                  font-size: 1.28rem;
+                                  font-family: 'Yekan Bakh FaNum';
+                                  font-weight: 700;
+                                  margin-top: 15px;
+                                            ">
+                                @item.Full_Name
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

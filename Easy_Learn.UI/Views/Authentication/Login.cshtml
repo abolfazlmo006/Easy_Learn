@@ -1,0 +1,51 @@
+﻿@model Easy_Learn.UI.ViewModels.UserVM.LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section css {
+    <link href="~/css/login.css" rel="stylesheet" />
+}
+<div class="d-flex pb-5 vazir" style="background-color: white !important; justify-content: center ; align-items: center;border-radius: 20px">
+
+    <div class="login-box p-3">
+        <div class="pb-2" style="border-bottom: 1px rgba(224, 221, 221, 0.849) dashed;">
+            <h3>خوش آمدید</h3>
+        </div>
+        @if (ViewBag.Error != null)
+        {
+            <ul class="text-danger">
+                @foreach (var error in ViewBag.Error)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+        }
+        else if (ViewBag.Message != null)
+        {
+            <p class="text-danger">@ViewBag.Message</p>
+        }
+        <div class="pt-5" style="text-align: right;">
+            <form asp-action="Login" method="post">
+                <label for="" class="form-label">نام کاربری</label>
+                <input asp-for="UserName" placeholder="نام کاربری" class="form-control">
+                <span asp-validation-for="UserName" class="text-danger"></span>
+                <label for="" class="form-label">رمز عبور</label>
+                <input asp-for="Password" placeholder="رمز عبور" class="form-control">
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <br />
+                <div class="d-flex" style="position: relative;">
+                    <input type="submit" value="ورود" class="btn mt-3" style="background-color: #3B82F6; color: white;">
+                    <a href="" style="position: absolute; left: 0; top: 30%;">فراموشی رمز عبور</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

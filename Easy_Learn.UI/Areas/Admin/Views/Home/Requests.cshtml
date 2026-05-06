@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Easy_Learn.UI.ViewModels.TeacherVM.GetRequestForTeacherVM>
+
+@{
+    ViewData["Title"] = "مدیریت درخواست‌ها";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="mb-0"><i class="fas fa-list-alt me-2"></i>لیست درخواست‌های تدریس</h3>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="py-3">توضیحات</th>
+                            <th class="py-3">موبایل</th>
+                            <th class="py-3">ایمیل</th>
+                            <th class="py-3 text-center">آدرس رزومه</th>
+                            <th class="py-3 text-center">عملیات</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="transition-effect">
+                                <td class="text-truncate" style="max-width: 300px;">@item.Descrption</td>
+                                <td>@item.Mobile</td>
+                                <td>@item.Email</td>
+                                <td class="text-center"><a href="@item.Address_Resumes" class="btn btn-sm btn-outline-info"><i class="fas fa-file-pdf"></i>دریافت</a></td>
+                                <td class="text-center">
+                                    <div class="btn-group" role="group">
+                                        <a asp-action="VerifyRequestTeacher" asp-route-Id="@item.Id" class="btn btn-sm btn-outline-info mx-2">
+                                            <i class="fa-solid fa-circle-check"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section css  {
+    <style>
+        .transition-effect {
+            transition: all 0.2s ease;
+        }
+
+            .transition-effect:hover {
+                transform: translateX(5px);
+                background-color: #f8f9fa;
+            }
+
+        .table-hover tbody tr:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .text-truncate {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card {
+            border-radius: 15px;
+            border: none;
+        }
+
+        .table thead th {
+            letter-spacing: 0.5px;
+        }
+    </style>
+}

@@ -1,0 +1,50 @@
+﻿@model Easy_Learn.UI.ViewModels.QuestionVM.CreateQuestionCourseVM
+
+@{
+    ViewData["Title"] = "create";
+}
+
+<h1>ایجاد سوال</h1>
+
+<hr />
+<div class="container-lg">
+    <div class="col-md-4">
+        <form asp-action="create" method="post">
+            @if (ViewBag.Error != null)
+            {
+                <ul class="text-danger">
+                    @foreach (var item in ViewBag.Error)
+                    {
+                        <li>@item</li>
+                    }
+                </ul>
+            }
+            else if (ViewBag.Message != null)
+            {
+                <p class="text-danger">@ViewBag.Message</p>
+            }
+            <div class="form-group">
+                <input asp-for="CourseId" type="hidden" value="@ViewData["Id"]" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,64 @@
+﻿@model GetOrderDetailVM
+@{
+    ViewData["Title"] = "ShowCart";
+}
+
+<div class="container mt-4">
+    <div class="row m-0">
+        @if (Model == null)
+        {
+            <h2 class="alert alert-info vazir">سبد خرید شما خالی است</h2>
+        }
+        else
+        {
+            @foreach (var item in Model.CourseListDtos)
+            {
+                <div class="col-12 col-md-8 vazir">
+                    <div class="col-12 bg-white p-3 row m-0 mb-4" style="border-radius: 8px;text-align: center;">
+                        <div class="row col-12 col-md-8 m-0" style="align-items: center; gap: 2%;">
+                            <img class="col-12 col-md-7" style="border-radius: 17px;" width="200px" height="120px"
+                                 src="./Images/course/@item.Image" alt="">
+                            <div class="col-12 col-md-4">
+                                <p>@item.Name</p>
+                                <p>@item.Teacher_Name</p>
+                            </div>
+                        </div>
+                        <div class="d-flex col-12 col-md-4" style="align-items: center;gap: 20px;">
+                            <p>قیمت :@item.Price تومان</p>
+                            <a asp-action="Delete" asp-route-id="@item.Id">
+                            <svg class="text-danger" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                            </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (Model.CourseListDtos.Count !=0)
+            {
+                <div class="col-12 col-md-4 Yekan-Bakh-FaNum" style="padding-left: 9px;padding-right: 2.5rem;">
+                    <div class="bg-white p-3 col-12" style="border-radius: 8px;text-align: center;">
+                        <div class="col-12 mb-3" style="border-bottom: 1px solid #E5E5E5;text-align: center;">
+                            <p>اطلاعات پرداخت</p>
+                        </div>
+                        <div class="col-12 mb-3" style="border-bottom: 1px solid #E5E5E5;">
+                            <p>جمع کل : @Model.Total_Price تومان</p>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <p>مبلغ قابل پرداخت : @Model.Total_Price تومان</p>
+                        </div>
+                        <div class="col-12">
+                            <a asp-action="Pay"><button class="btn btn-primary" style="width: 100%;">پرداخت</button></a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <h2 class="alert alert-info vazir">سبد خرید شما خالی است</h2>
+            }
+        }
+
+    </div>
+</div>

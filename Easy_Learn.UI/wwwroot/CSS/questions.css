@@ -1,0 +1,33 @@
+﻿.question {
+    border-radius: 30px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.question-body {
+    padding: 10px;
+}
+
+.answer-count {
+    text-align: center;
+    font-size: larger;
+    color: #3b82f6;
+}
+
+    .answer-count div {
+        border-radius: 20px;
+        background-color: #f3f4f6;
+    }
+
+.question-title p {
+    font-size: larger;
+}
+
+
+@media (max-width: 767px) {
+    .a {
+        display: none;
+    }
+}

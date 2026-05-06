@@ -1,0 +1,28 @@
+@media (max-width:1023px) {
+    .Teacher{
+        display: block !important;
+        text-align: center;
+    }
+    .Teacher img{
+        width: 66%;
+    }
+}
+
+@media (max-width: 991px){
+    .heading-8{
+        padding : 0px !important;
+        margin:0px !important;
+    }
+    .p-text-gray{
+        display:block !important;
+        padding:0px !important;
+        margin : auto !important;
+        max-width : fit-content !important;
+    }
+    .link-29{
+        margin-right : 0px !important;
+    }
+    .cover-left{
+        display : none !important;
+    }
+}

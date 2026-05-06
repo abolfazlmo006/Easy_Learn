@@ -1,0 +1,8 @@
+{
+  "disks": [
+    {
+      "name": "easylearn-disk",
+      "mountTo": "wwwroot"
+    }
+  ]
+}

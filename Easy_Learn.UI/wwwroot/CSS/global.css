@@ -1,0 +1,62 @@
+body {
+    background-color: #f3f4f6;
+    /* flex-direction: row; */
+    justify-content: center;
+    width: 100%;
+}
+@font-face {
+    font-family: "Yekan Bakh FaNum Fat";
+    src: url("../fonts/YekanBakh-Fat.ttf")format('truetype');
+}
+@font-face {
+    src: url('../fonts/Yekan-Bakh-FaNum-normal-500-100.ttf')format('truetype');
+    font-family: "Yekan Bakh FaNum";
+}
+@font-face {
+    font-family: "Yekan Bakh FaNum Heavy";
+    src: url("../fonts/YekanBakh-Heavy.ttf")format('truetype');
+}
+@font-face {
+    src: url('../fonts/IRANSansWeb(FaNum)-normal-400-100.ttf')format('truetype');
+    font-family: "IranSans";
+}
+
+a{
+    text-decoration: none;
+}
+
+.vair{
+    font-family: 'vazir';
+}
+
+.iransans{
+    font-family: "IranSans";
+}
+
+.Yekan-Bakh-FaNum-Heavy{
+    font-family: "Yekan Bakh FaNum Heavy";
+}
+
+.Yekan-Bakh-FaNum{
+    font-family: "Yekan Bakh FaNum";
+}
+
+.Yekan-Bakh-FaNum-Fat{
+    font-family: "Yekan Bakh FaNum Fat";
+}
+.bug-txt {
+    overflow-wrap: anywhere;
+}
+p {
+    overflow-wrap: anywhere;
+}
+
+span{
+    display : block;
+}
+@media (max-width:991px) {
+    *{
+        text-align:center;
+        justify-content:center;
+    }
+}

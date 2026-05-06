@@ -1,0 +1,417 @@
+.course{
+    margin-top: 70px;
+}
+.div-shadow-smswiper {
+    position: relative;
+    width: 296.5px !important;
+    height: 455px;
+    z-index: 3;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 68px !important;
+    margin: auto;
+    text-align : justify;
+}
+
+.text-wrapper-17 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    z-index: 1;
+    font-family: "Yekan Bakh FaNum", Helvetica;
+    font-weight: 700;
+    color: #3b82f6;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 16px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.div-flex-20 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: absolute;
+    top: 128px;
+    left: 0;
+}
+
+.div-px {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 16px 36px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-flex-21 {
+    display: inline-flex;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.span-flex-margin {
+    padding: 0px 16px 8px 0px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.span-flex-3 {
+    gap: 3.8px;
+    padding: 0px 0px 0px 1.28px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.SVG-15 {
+    position: relative;
+    width: 7px;
+    height: 7px;
+    z-index: 0;
+}
+
+.span-flex-wrapper {
+    padding: 0px 0px 8px;
+    display: inline-flex;
+    align-items: center;
+    left: 200px;
+}
+
+.span-flex-4 {
+    gap: 3.8px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-wrapper-4 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 0px 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.link-23 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px 0px 0px 73.7px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.text-wrapper-33 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum", Helvetica;
+    font-weight:800;
+    color: #475466;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 28px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.p-mb {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px 0px 0px 12.7px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.text-wrapper-34 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Fat", Helvetica;
+    font-weight: 400;
+    color: #79899e;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 24px;
+    direction: rtl;
+}
+
+.div-pb-2 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 16px 4px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-14 {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-flex-22 {
+    display: inline-flex;
+    align-items: center;
+    gap: 3.86px;
+    padding: 0px 0px 0px 86.64px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.SVG-16 {
+    position: relative;
+    width: 24px;
+    height: 25px;
+    z-index: 0;
+}
+
+.div-rounded-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 0px 0px 147.52px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-rounded {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 5px 7.8px 4px 9.18px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #f8d4d4;
+    border-radius: 4px;
+}
+
+.div-flex-23 {
+    height: 36px;
+    z-index: 1;
+    position: relative;
+}
+
+.span-text-biscay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    left: 20px;
+}
+
+.text-wrapper-37 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    margin-left: -1.8px;
+    font-family: "Yekan Bakh FaNum Bold", Helvetica;
+    font-weight: 700;
+    color: #334155;
+    font-size: 30px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 36px;
+    white-space: nowrap;
+}
+
+.div-flex-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 0.01px 0px 8px;
+    position: absolute;
+    z-index: 0;
+    left: 171px;
+  }
+  
+  .div-flex-27 {
+    display: inline-flex;
+    height: 24px;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #e3e6ec;
+    border-radius: 4px;
+  }
+  
+  .span-text-gray-3 {
+    width: 36.78px;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .text-wrapper-44 {
+    position: relative;
+    width: fit-content;
+    margin-top: 4px;
+    margin-left: -4.22px;
+    font-family: "Yekan Bakh FaNum Fat", Helvetica;
+    font-weight: 400;
+    color: #607496;
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+  
+  .SVG-18 {
+    position: relative;
+    width: 15px;
+    height: 14px;
+    z-index: 0;
+  }
+  
+
+.SVG-17 {
+    position: absolute;
+    width: 14px;
+    height: 16px;
+    top: 10px;
+    left: 0;
+}
+
+.text-wrapper-38 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Bold", Helvetica;
+    font-weight: 700;
+    color: #334155;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 15px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.span-m-margin {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4px 3.73px 4px 4px;
+    margin-left: -0.29px;
+    z-index: 0;
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.text-wrapper-39 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Bold", Helvetica;
+    font-weight: 700;
+    color: #95a0b1;
+    font-size: 10px;
+    letter-spacing: 0;
+    line-height: 15px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.div-flex-24 {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 17px 70.26px 16px 70.27px;
+    position: relative;
+    flex: 0 0 auto;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-color: #95a0b11a;
+}
+
+.link-24 {
+    position: relative;
+    width: 155.97px;
+    height: 24px;
+}
+
+.span-2 {
+    display: flex;
+    width: 126px;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.text-wrapper-40 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    margin-left: -1.03px;
+    font-family: "Yekan Bakh FaNum", Helvetica;
+    font-weight: 600;
+    color: #3B82F6;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.SVG-margin {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    top: -2px;
+    left: 0;
+}
+
+.div-absolute {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px 16px 10px;
+    position: absolute;
+    top: -48px;
+    left: 0;
+}
+
+.link-25 {
+    display: inline-flex;
+    align-items: flex-start;
+    position: relative;
+    align-self: stretch;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.div-15 {
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    max-width: 264.5px;
+    width: 264.5px;
+    height: 160px;
+    max-height: 160px;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: 50% 50%;
+}

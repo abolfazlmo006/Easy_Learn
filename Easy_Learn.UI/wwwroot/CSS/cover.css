@@ -1,0 +1,420 @@
+{
+    background-color: #f3f4f6;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.div {
+    background-color: #f3f4f6;
+    overflow: hidden;
+    width: 1349px;
+}
+
+.section-3 {
+    display: flex;
+    width: 1258px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 30.5px;
+}
+
+.div-relative-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 1288px;
+    align-items: flex-start;
+    padding: 0px 15px;
+    position: relative;
+    flex: 0 0 auto;
+    margin-left: -45.5px;
+    margin-right: -45.5px;
+}
+
+.overlap-wrapper {
+    position: relative;
+    width: 1258px;
+    height: 694px;
+}
+
+.overlap {
+    position: relative;
+    width: 1170px;
+    height: 694px;
+    left: 88px;
+}
+
+.div-col-span-4 {
+    position: absolute;
+    width: 629px;
+    height: 694px;
+    top: 0;
+    left: 540px;
+}
+
+.heading-8 {
+    display: inline-flex;
+    max-width: 546px;
+    padding: 0px 0px 0px 1.2px;
+    position: absolute;
+    top: 0;
+    left: 127px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.text-wrapper-48 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Heavy", Helvetica;
+    font-weight: 400;
+    color: #334155;
+    font-size: 57.1px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 88px;
+    direction: rtl;
+}
+
+.p-text-gray {
+    display: inline-flex;
+    flex-direction: column;
+    max-width: 608px;
+    align-items: flex-end;
+    padding: 0px 0px 0px 32.2px;
+    position: absolute;
+    top: 192px;
+    left: 120px;
+}
+
+.text-wrapper-49 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Fat", Helvetica;
+    font-weight: 400;
+    color: #79899e;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 40px;
+    direction: rtl;
+}
+
+.link-29 {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 28px;
+    position: absolute;
+    top: 316px;
+    left: 212px;
+    background-color: #3b82f6;
+    border-radius: 8px;
+}
+
+.SVG-19 {
+    position: relative;
+    width: 27px;
+    height: 27px;
+    z-index: 1;
+}
+
+.span-font-medium {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    flex: 0 0 auto;
+    z-index: 0;
+}
+
+.text-wrapper-50 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Medium", Helvetica;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 28px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.list-3 {
+    position: absolute;
+    width: 576px;
+    height: 129px;
+    top: 428px;
+    left: 53px;
+}
+
+.item-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 0px 0px 24px;
+    position: absolute;
+    top: 0;
+    left: 288px;
+}
+
+.item-4 {
+    align-items: flex-start;
+    gap: 15.8px;
+    padding: 0px 0px 0px 44.39px;
+    border-radius: 12px;
+    display: inline-flex;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.span-text-gray-5 {
+    display: inline-flex;
+    padding: 0px 0px 8px 6.81px;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.text-wrapper-51 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Yekan Bakh FaNum Bold", Helvetica;
+    font-weight: 700;
+    color: #4e5968;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 33px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.SVG-20 {
+    position: relative;
+    width: 41px;
+    height: 41px;
+    z-index: 0;
+}
+
+.item-margin-2 {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 0px 0px 24px;
+    position: absolute;
+    top: 0;
+    left: 48px;
+}
+
+.item-5 {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0px 0px 0px 25.95px;
+    border-radius: 12px;
+    display: inline-flex;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.span-text-gray-6 {
+    display: flex;
+    width: 159.05px;
+    padding: 0px 0px 8px;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.text-wrapper-52 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    margin-left: -0.95px;
+    font-family: "Yekan Bakh FaNum Bold", Helvetica;
+    font-weight: 700;
+    color: #4e5968;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 33px;
+    white-space: nowrap;
+    direction: rtl;
+}
+
+.SVG-21 {
+    position: relative;
+    width: 39px;
+    height: 40px;
+    z-index: 0;
+}
+
+.overlap-group-2 {
+    position: absolute;
+    width: 531px;
+    height: 64px;
+    top: 65px;
+    left: 45px;
+}
+
+.item-margin-3 {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 0px 0px 24px;
+    position: absolute;
+    top: 0;
+    left: 243px;
+}
+
+.item-6 {
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0px 0px 0px 38.89px;
+    border-radius: 12px;
+    display: inline-flex;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.span-text-gray-7 {
+    display: flex;
+    width: 193.11px;
+    padding: 0px 0px 7px;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.SVG-22 {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    z-index: 0;
+}
+
+.item-margin-4 {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 0px 0px 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item-7 {
+    align-items: flex-start;
+    gap: 15.8px;
+    padding: 0px 0px 0px 32.27px;
+    border-radius: 12px;
+    display: inline-flex;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.span-text-gray-8 {
+    display: inline-flex;
+    padding: 0px 0px 7px 4.93px;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.SVG-23 {
+    position: relative;
+    width: 41px;
+    height: 40px;
+    z-index: 0;
+}
+
+.div-col-lg-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 626px;
+    align-items: flex-start;
+    position: absolute;
+    top: 160px;
+    left: 0;
+}
+
+.div-col-lg {
+    display: flex;
+    flex-direction: column;
+    width: 570px;
+    align-items: flex-start;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-row {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0px 0px;
+    padding: 0px 190px 0px 0px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.div-col-xl {
+    position: relative;
+    max-width: 570px;
+    width: 380px;
+    height: 350px;
+}
+
+.overlap-group-3 {
+    position: absolute;
+    width: 380px;
+    height: 350px;
+    top: 50px;
+    left: 15px;
+}
+
+.div-smooth-corners {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 0;
+    left: 0;
+}
+
+.header-human-head {
+    position: absolute;
+    width: 438px;
+    height: 461px;
+    top: -130px;
+    left: -44px;
+}
+
+.div-smooth-corners-2 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 65px;
+    left: 310px;
+}
+
+.div-smooth-corners-3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 20px;
+    left: 435px;
+}
+
+.div-absolute-2 {
+    position: absolute;
+    width: 1070px;
+    height: 129px;
+    top: 565px;
+    left: 57px;
+}

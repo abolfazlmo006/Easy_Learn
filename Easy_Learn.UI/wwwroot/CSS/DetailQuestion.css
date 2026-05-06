@@ -1,0 +1,60 @@
+﻿.profile {
+    padding: 10px;
+}
+
+.question {
+    border-radius: 30px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.question-body {
+    padding: 10px;
+}
+
+.question-title h1 {
+    font-size: 1.45rem;
+    font-weight: 700;
+}
+
+.description {
+    line-height: normal;
+    padding-right: 2.5rem;
+}
+
+.answer {
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px dashed black;
+}
+
+.img {
+    padding-left: 10px;
+    border-left: 1px dashed black;
+}
+
+.info p {
+    font-size: large;
+    margin-right: 1rem;
+}
+
+.info {
+    border-bottom: 1px dashed black;
+    padding-bottom: 10px;
+}
+
+.answer-title {
+    line-height: 1.6;
+}
+
+#deleteform:hover svg {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .a {
+        display: none;
+    }
+}

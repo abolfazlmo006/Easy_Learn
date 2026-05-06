@@ -1,0 +1,74 @@
+﻿@model List<CourseListVM>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section css{
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link href="~/css/covernew.css" rel="stylesheet" />
+    <link href="~/css/course.css" rel="stylesheet" />
+}
+
+<partial name="_CoverPartial"></partial>
+
+<div class="container-lg course">
+    <div class="d-flex" style="margin-bottom: 9%;">
+        <div class="col-12 col-md-3 d-flex">
+            <svg style="--tw-text-opacity: 1;color: rgba(100,116,139,var(--tw-text-opacity));margin-left: 1%;"
+                 width="37" height="34" viewBox="0 0 37 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="24" r="10" fill="currentColor"></circle>
+                <circle cx="30" cy="13" r="7" fill="currentColor" fill-opacity="0.4"></circle>
+                <circle cx="15" cy="4" r="4" fill="currentColor" fill-opacity="0.7"></circle>
+            </svg>
+            <div>
+                <p style="font-family: 'Yekan Bakh FaNum Heavy', Helvetica;
+                    font-weight: 400;
+                    color: #334155;
+                    font-size: 2.2rem;">جدیدترین دوره ها</p>
+            </div>
+        </div>
+        <!-- <div class="col-12 col-md-3 d-flex">
+            <div>
+                <p>مشاهده همه دوره ها</p>
+            </div>
+
+        </div> -->
+    </div>
+    <div class="row">
+        @foreach (var course in Model)
+        {
+            <partial name="_CoursePartial" model="course"></partial>
+        }
+    </div>
+</div>
+
+<div class="container-lg Teacher mt-3 d-flex">
+    <div class="col-12 col-lg-7" style="margin-top: 10%;text-align: center;">
+        <p style="font-family: 'Yekan Bakh FaNum';
+            font-weight: 600;
+            font-size: 1.6rem;">تدریس در ایزی لرن</p>
+        <p style="    font-family: 'Yekan Bakh FaNum';
+            font-size: 1.25rem;
+            color: rgb(134, 141, 153);
+            font-weight: 400;">
+            برای همکاری آموزشی،تدریس و ارائه آموزش در ایزی لرن و پیوستن به آن به لینک زیر مراجعه
+            کنید
+        </p>
+        <a asp-controller="Home" asp-action="RequestTeacher" class="link-29" style="margin-right: 0px !important;">
+            <svg width="23" height="19" viewBox="0 0 23 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1017_42910)">
+                    <path d="M21.0625 0.0189514H7.5625C6.63086 0.0189514 5.875 0.801178 5.875 1.76376V3.39395C6.69836 3.39395 7.46055 3.63235 8.09336 4.02008V2.26895H20.4684V12.394H18.2184V10.7065C18.2184 10.3957 17.9665 10.144 17.6559 10.144H14.2809C13.9702 10.144 13.7184 10.3957 13.7184 10.7065V12.394H10.3504C11.1263 12.9733 11.7405 13.7475 12.1349 14.644H21.0611C21.9941 14.644 22.75 13.8635 22.75 12.9002V1.76376C22.75 0.801178 21.9941 0.0189514 21.0625 0.0189514ZM5.875 11.269C7.73898 11.269 9.25 9.75794 9.25 7.89395C9.25 6.02997 7.73898 4.51895 5.875 4.51895C3.98008 4.51895 2.5 5.99903 2.5 7.89395C2.5 9.75723 3.98008 11.269 5.875 11.269ZM7 12.394H4.75C2.2648 12.394 0.25 14.4088 0.25 16.894C0.25 17.5152 0.753789 18.019 1.375 18.019H10.375C10.9962 18.019 11.5 17.5152 11.5 16.894C11.5 14.4084 9.48555 12.394 7 12.394Z"
+                          fill="white"></path>
+                </g>
+                <defs>
+                    <clipPath id="clip0_1017_42910">
+                        <rect width="22.5" height="18" fill="white" transform="translate(0.25 0.0189514)"></rect>
+                    </clipPath>
+                </defs>
+            </svg>
+            <div class="span-font-medium">
+                <div class="text-wrapper-50 vazir">تدریس در ایزی لرن</div>
+            </div>
+        </a>
+    </div>
+    <img class="col-12 col-lg-5" src="~/Images/tadris-dar-easylearn.webp" alt="">
+</div>

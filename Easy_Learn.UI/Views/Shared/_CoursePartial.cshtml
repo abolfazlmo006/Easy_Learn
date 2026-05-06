@@ -1,0 +1,72 @@
+﻿@model CourseListVM
+
+
+@if (Model.IsSuccess)
+{
+    <div class="div-shadow-smswiper">
+        <div class="div-flex-20" style="left:auto">
+            <div class="div-px" style="padding:0px">
+                <div class="div-flex-21">
+                    <div class="span-flex-wrapper">
+                        <div class="span-flex-4">
+                            <img class="SVG-15" src="~/Images/dot-blue.svg">
+                            <div class="text-wrapper-17">@Model.Status</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-wrapper-4">
+                    <div class="link-23">
+                        <p class="text-wrapper-33">@Model.Name</p>
+                    </div>
+                </div>
+                <div class="div-wrapper-4">
+                    <div class="p-mb">
+                        <p class="text-wrapper-34 bug-txt" style="width:270px">
+                            @Model.Short_Description
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="div-3" style="position: absolute;top: 220px;left: 0px;">
+                <div class="div-pb-2 w-100">
+                    <div class="div-2 w-100">
+                        <div class="div-flex-23 d-flex">
+                            @if (!Model.IsFree)
+                            {
+                                <img class="SVG-17" src="~/Images/TOMAN.svg">
+                                <div class="span-text-biscay">
+                                    <div class="text-wrapper-37">@Model.Price.ToString("n0")</div>
+                                </div>
+                            }
+                            <div class="div-flex-wrapper">
+                                <div class="div-flex-27">
+                                    <div class="span-text-gray-3">
+                                        <div class="text-wrapper-44">@Model.Length_Course</div>
+                                    </div>
+                                    <img class="SVG-18" src="~/Images/Saat.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div-flex-24">
+                    <div class="link-24">
+                        <a asp-controller="Home" asp-action="Details" asp-route-Id="@Model.Id">
+                            <div class="span-2">
+                                <div class="text-wrapper-40">مشاهده اطلاعات دوره</div>
+                            </div>
+                            <img class="SVG-margin" src="~/Images/Enter-blue.svg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-absolute">
+            <div class="link-25">
+                <div style="background-image: url(/Images/course/@Model.Image);"
+                     class="div-15"></div>
+            </div>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,129 @@
+.title-box {
+    padding: 24px 0px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.img-course {
+    width: 100%;
+    height: 235px;
+    border-radius: 8px;
+}
+
+.title-text-course {
+    font-family: "Yekan Bakh FaNum";
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-right: 8%;
+    display: block;
+}
+
+.txt-title-description-course {
+    margin-right: 14%;
+    font-family: "Yekan Bakh FaNum";
+    font-size: 1.25rem;
+    color: rgb(134, 141, 153);
+    font-weight: 400;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin: auto;
+}
+
+.videos-course {
+    margin: 20px 50px;
+}
+
+.comments-course {
+    gap: 30px;
+    margin: 30px;
+}
+
+.comment-course {
+    padding: 15px 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #eceeef;
+}
+
+.price {
+    font-family: "Yekan Bakh FaNum";
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.SVG-17 {
+    width: 14px;
+    height: 16px;
+}
+
+@media (max-width: 991px) {
+    .txt-title-course {
+        order: 1;
+    }
+
+    .title-box {
+        text-align: center;
+    }
+
+    .img-course {
+        width: 90%;
+    }
+
+    .title-text-course {
+        margin-right: 0px;
+    }
+
+    .txt-title-description-course {
+        margin-right: 0px;
+        padding: 2%;
+    }
+}
+
+.comment-box {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .comment-box h2 {
+        margin-top: 0;
+        color: #333;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .comment-box textarea {
+        width: 100%;
+        height: 150px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .comment-box .button {
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+        .comment-box .button:hover {
+            background-color: #218838;
+        }
