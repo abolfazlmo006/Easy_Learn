@@ -365,3 +365,4 @@ FodyWeavers.xsd
 
 # Ignore ALL appsettings files (including base, development, production)
 **/appsettings.json
+/Easy_Learn.UI/liara.json
