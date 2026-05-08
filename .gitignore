@@ -363,4 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /Easy_Learn.zip
 
-appsettings.json
+# Ignore ALL appsettings files (including base, development, production)
+**/appsettings.json
